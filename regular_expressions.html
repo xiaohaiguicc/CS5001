@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+        <!-- PROVIDE METADATA -->
+        <!-- ================ -->
+        <title>CS 5001: Foundations</title>
+        <meta name="author" content="Tony Mullen">
+        <meta name="date" content="2099-12-31">
+
+        <!-- override some style here if needed (or use an external file) -->
+        <style type="text/css">
+            .deck-container .title-slide {border: 1px solid red; font-size: 70%;}
+            .deck-container > .slide {border: 1px solid #EEE;}
+            .slide b {color: blue;}
+            .niceClass {border: 1px solid black;}
+
+            /* simple example for full screen images (could integrate in a theme or future extension) */
+            .deck-container.fsimg .slide {padding:0;}
+            /*.deck-container.fsimg {background: black;}*/
+            .fsimg h2 {display: none;}
+            .fsimg .deck-status {display: none;}
+            .fsimg img {min-width:800px; min-height:600px; position: absolute; left:0; top:0; margin:0; }
+            .fsimg .attribution-wrap {width:800px; height:600px;}
+
+
+            table th {border-top: none; border-left: none; border-right: none;
+              border-bottom: medium solid gray; ;}
+            table.pad td {padding: 10px;}
+            table.bighpad td {padding: 10px 30px;}
+            table.center {margin: auto;}
+            table.ljust td {text-align: left;}
+            table.notdpad td {padding-top: 0; padding-bottom: 0}
+            table.mintdpad td {padding-top: 5px; padding-bottom: 5px}
+            .center {margin: auto;}
+            span.ilcode {width: 20px; background-color: black; margin: 0 5px; padding: 0 5px}
+            span.codefont {font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;}
+
+
+        </style>
+        <link rel="stylesheet" media="screen" href="deck.js/themes/transition/fade.css">
+
+	<script src="deck.js/extensions/includedeck/load.js"></script>
+        <script>
+            includedeck("profile-3 theme:mytheme", {})
+
+            // Advanced: the "{}" can be filled with optional arguments such as
+            //// PREFIX: "deck.js",
+            //// INITDELAY: 500,
+            //// BEFORELOAD: function() {alert('will load')},
+            //// BEFOREINIT: function() {alert('loaded')},
+            //// AFTERINIT: function() {alert('inited')},
+            //// GENERIC: function(whe, wha) {if (whe == "AFTER" && wha == "svg") alert("AFTER SVG")},
+            //// fitMarginX:100, fitMarginY:100, // to tune margins
+            //// fitMode: "stretched", // to strech (variable aspect ratio)
+
+            // You can alternatively select what to include (as in these commented out examples)
+            //// includedeck(["profile-3", "theme:swiss"]);
+            //// includedeck(["profile-3", "mytheme.css", "custom.js"]);
+        </script>
+        <link rel="stylesheet" href="./highlight/styles/tomorrow-night.css">
+        <script src="./highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="./d3/d3.js" charset="utf-8"></script>
+  <!--
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+      -->
+    </head>
+<body>
+<div class="deck-container">
+    <div class="deck-loading-splash" style="background: white; color: gray;">
+        <span class="vcenter" style="font-size: 24px; font-family: Arial; ">
+          Loading…
+          </span>
+    </div>
+
+<!-- this presentation uses smart syntax -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+
+<section class="slide">
+    <h2>Regular Expressions</h2>
+    Regular expressions (regexes, regexps) are a simple but powerful language for matching 
+    (finding, replacing) substrings. Found in (among others):
+    <ul>
+        <li>Web
+            <ul>
+                <li>Google search</li>
+            </ul>
+        </li>
+        <li>Unix/Linux
+              <ul>
+                  <li>Commmand line utilities: grep, less, sed, awk</li>
+                  <li>Editors: Emacs, ed, vi</li>
+              </ul>
+          </li>
+        <li>Scripting/Programming
+              <ul>
+                  <li>Perl, Python, Matlab, tcl, PHP, JS</li>
+                  <li>C++ libraries, .NET, Java</li>
+              </ul>
+          </li>
+    </ul>
+  </section>
+  
+  
+  <section class="slide">
+          <h2>Regular Expressions</h2>
+          Regular expressions (regexes, regexps) are a simple but powerful language for matching 
+          (finding, replacing) substrings. Found in (among others):
+          <ul>
+              <li>Editors/IDEs
+                    <ul>
+                        <li>Atom, VSC, Sublime, etc...</li>
+                        <li>IntelliJ, Eclipse...</li>
+                    </ul>
+                </li>
+          </ul>
+        </section>
+  
+  <section class="slide">
+    <h2>Regular expressions</h2>
+   What are they?
+    <ul><li>A pattern of characters used to match strings in a search</li></ul>
+   How do they work?
+  <ul><li>Metacharacters have special meaning
+      <ul>
+          <li> <span class="codefont">. * ? +</span> ...</li>
+          <li> Special characters using <span class="codefont">\</span>, e.g. 
+              <span class="codefont">\s</span> (whitespace),
+              <span class="codefont">\w</span> (alphanumeric)</li>
+          <li> <span class="codefont">\</span> escapes the special meaning of the character 
+          that follows  <span class="codefont">\</span> </li>
+      </ul>
+  </li>
+  <li>Non-metacharacters match themselves:
+      <ul>
+          <li> <span class="codefont">A-Z a-z 0-9 </span> ... </li>
+      </ul>
+  </li>
+  </ul>
+  </section>
+  
+  <section class="slide">
+          <h2>Metacharacters</h2>
+  <table class="center mintdpad pad ljust">
+          <tr>
+            <td> <span class="codefont">.</span></td>
+            <td>Any character, except the new line</td>
+          </tr>
+          <tr>
+            <td><span class="codefont">[a-z]</span></td>
+            <td>Any one (single) character in the set (lowercase letters)</td>
+          </tr>
+          <tr>
+            <td><span class="codefont">[^a-z]</span></td>
+            <td>Any one (single) character <em>not</em> in the se</td>
+          </tr>
+          <tr>
+            <td><span class="codefont">*</span></td>
+            <td>Zero or more of the preceding character</td>
+          </tr>
+          <tr>
+            <td><span class="codefont">+</span></td>
+            <td>One or more of the preceding character</td>
+          </tr>
+          <tr>
+            <td><span class="codefont">|</span> or <span class="codefont">(|)</span></td>
+            <td>or</td>
+          </tr>
+      </table>
+  </section>
+  
+  
+  <section class="slide">
+          <h2>Metacharacters</h2>
+          Examples:
+  <table class="center mintdpad pad ljust">
+          <tr>
+            <td> <span class="codefont">(Mr|Mrs) X</span></td>
+            <td>"Mr X" or "Mrs X"</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">[0-9A-Fa-f]</span></td>
+            <td>Hex digit</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">0x[0-9A-Fa-f]+</span></td>
+            <td>Hex number</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">\[[^\]]*\]</span></td>
+            <td>Text in square brackets</td>
+          </tr>
+      </table>
+  </section>
+  
+  <section class="slide">
+          <h2>Anchors</h2>
+  <table class="center mintdpad pad ljust">
+          <tr>
+            <td> <span class="codefont">^</span></td>
+            <td>Beginning of line</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">$</span></td>
+            <td>End of line</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">&lt;</span> or <span class="codefont">\&lt;</span></td>
+            <td>Beginning of word</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">></span> or <span class="codefont">\></span></td>
+            <td>Text in square brackets</td>
+          </tr>
+      </table>
+      Examples:
+  <table class="center mintdpad pad ljust">
+          <tr>
+            <td> <span class="codefont">^[\s]*$</span></td>
+            <td>Blank line</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">&lt;A[A-Za-z]*></span></td>
+            <td>Word that starts with capital 'A'</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">^//.*</span></td>
+            <td>Comment line (in C/Java)</td>
+          </tr>
+          <tr>
+            <td> <span class="codefont">[0-9]+\.[0-9]*0</span></td>
+            <td>Float number with at least one trailing zero</td>
+          </tr>
+      </table>
+  </section>
+  
+  <section class="slide">
+          <h2>Capturing & greediness</h2>
+  Pattern matches surrounded by parentheses are stored in special <span class="codefont">$</span> variables:
+  <pre><code class="python">import re
+
+my_string = "ABCDE12345abcdefgLMNOP"
+my_string = re.sub(r".*([0-9]+)([a-z]+).*",
+                   r"Matched \1 then \2", 
+                   my_string)</code></pre>
+  What will outstring be?
+  <div class="slide">
+  <pre><code class="java">Matched 5 first, then abcdefg</code></pre>
+  Is this what you expected?
+  </div>
+  </section> 
+  
+  <section class="slide">
+          <h2>Capturing & greediness</h2>
+  <span class="codefont">*</span> matching is <em>greedy</em> by default. It matches as much as it can. 
+  The opposite is <em>lazy</em> matching, which matches as little as it can. Lazy matching uses 
+  <span class="codefont">*?</span>
+  <pre><code class="python">import re
+
+my_string = "ABCDE12345abcdefgLMNOP"
+my_string = re.sub(r".*?([0-9]+)([a-z]+).*",
+                    r"Matched \1 then \2", 
+                    my_string)</code></pre>
+  This time, outstring is:
+  <pre><code class="java">Matched 12345 first, then abcdefg</code></pre>
+  </section> 
+  
+  
+  <section class="slide">
+    <h2>Try it</h2>
+Go to <span class="codefont">https://regexr.com/41nh6</span>. In the body of the sample text, you'll find the following strings representing legitimate and illegitimate emails.
+</p>
+<table class="noborder ljust mintdpad">
+<tr>
+<td>
+<div style="height:200px">
+These <em>are</em> legitimate email strings:
+<ul style="list-style-type: none; padding:0">
+<li style="padding:0"><span class="codefont">Alice.J.Smith+spamCatcher@gmail.com</span></li>
+<li style="padding:0"><span class="codefont">doug@speedypizza.com</span></li>
+<li style="padding:0"><span class="codefont">alice1998@supernet.co.uk</span></li>
+<li style="padding:0"><span class="codefont">j_smith@betterworld.org</span></li>
+</ul>
+</div>
+</td>
+<td>
+<div style="height:200px">
+These are <em>not</em>:
+<ul style="list-style-type: none; padding:0">
+<li style="padding:0"><span class="codefont">@steve</span></li>
+<li style="padding:0"><span class="codefont">www.amazon.com</span></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+A) Write a regex that matches all of the strings in the left column in the text and lists them in the "list" window at the bottom of the screen.<br>
+B) Modify the reg ex and use capture variables (capture variables here use <span class="codefont">$</span> instead of <span class="codefont">\</span> as in Python, so <span class="codefont">$1, $2</span> etc.) to replace the emails in the text with identical emails enclosed by angle brackets, but with any gmail-only "plus" portion stripped out.
+</section>
+
+<section class="slide">
+<img src="./images/regex_puzzle_regexr.com.png" style="height:600px">
+</section>
+
+</div> <!-- end of deck container -->
+
+</body>
+</html>

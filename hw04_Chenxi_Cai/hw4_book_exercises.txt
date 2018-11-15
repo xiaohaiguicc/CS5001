@@ -1,0 +1,20 @@
+Exercise 5.9
+1.No, the results are different. Because the > ignore new input entry = 0, which is also a nonnegative integers that should be added.
+2.No, the results are different. Because when entry = 0, it isn't a negative value. Therefore, the loop should still run and ask for next input value.
+3.If the statement were moved out of the loop, the program will only have one input entry and if the input is a nonnegative integer, the while loop will never
+  stop without any print. 
+  Moving the assignment out of the loop is a bad thing. Because if the input is a nonnegative integer, the while loop will never
+  stop.
+4.The following code fragment print 100 asterisks.
+5.The following code fragment print infinite asterisks.
+13.(a){0,1,2,3,4}
+   (b){5,6,7,8,9}
+   (c){5,8,11,14,17}
+   (d){20,19,18,17,16,15,14,13,12,11,10,9,8,7,6}
+   (e){20,17,14,11,8}
+   (f){}
+   (g){}
+   (h){10,20,30,40,50,60,70,80,90,100}
+   (i){10,9,8,7,6,5,4,3,2,1,0}
+   (j){-3,-2,-1,0,1,2,3}
+   (k){0,1,2,3,4,5,6,7,8,9}

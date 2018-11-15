@@ -1,0 +1,13 @@
+7.7 Exercises
+1. No. Because the second function "proc(n)" is already defined.
+2. Yes. It will return x = 7 and y = 6 
+3. Yes. It will print 7
+4. Yes. It will print 26
+5. No. Because the function proc(x, y) has two arguments. However, in the main function, proc(5) only has one argument, no value for y.
+6. No. Because the function proc(x) has only one argument. However, in the main function, proc(5, 4) has two arguments.
+7. Yes. It will print 50.
+8. It will print 10 instead. The reason is that the proc(num) returned value is not assigned to a variable and the variable num still has value 10.
+   Then when print(num), it prints out num's value 10.
+9. It is legal. Because x is a local variable. This means that I can name a local variable without 
+   concern that its name may be used already in another part of the program.
+10. It is legal. Because x and y are local variables. They will have no influence with each other.

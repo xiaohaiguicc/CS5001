@@ -1,0 +1,9 @@
+[
+  "frequencies_test.py::test_constructor",
+  "frequencies_test.py::test_add_items",
+  "frequencies_test.py::test_fill_in_dic",
+  "frequencies_test.py::test_top_n_counts",
+  "frequencies_test.py::test_top_n_freqs",
+  "frequencies_test.py::test_frequency",
+  "frequencies_test.py::test_top_n_grams"
+]

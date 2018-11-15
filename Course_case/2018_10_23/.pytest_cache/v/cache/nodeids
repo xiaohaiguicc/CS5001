@@ -1,0 +1,5 @@
+[
+  "character_freq_test.py::test_constructor",
+  "character_freq_test.py::test_add_char",
+  "character_freq_test.py::test_count_line"
+]
