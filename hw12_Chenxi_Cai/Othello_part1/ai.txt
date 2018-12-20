@@ -1,0 +1,13 @@
+1.Yes, I attempt to make my computer player smart.
+
+2.I accomplished this part. The computer player becomes smarter but not smart enough.
+
+3.My "pick next move" algorithms:
+(i)When computer's turn, loop all locations without a tile.
+(ii)For each location, check if it is a legal location.
+(iii)If it is a legal location, then count how many black tiles can be flipped if a white tile put in that location. The flipped black tiles may be at the same line/row/diagonal line as the white one.
+(iv)For all legal location, compare the amount of flipped tiles. Then choose the location with the most flipped tiles. Computer player will put a white tile in this location.
+
+4.The frequency that my computer wins me is nearly the same that I win computer.
+
+5.In the future, I will not only count the number of flipped black tiles, num1, but also count after computer's turn, all the possible number of flipped white tiles, num2. Then I need to find a location that with the biggest num1 and smallest num2.

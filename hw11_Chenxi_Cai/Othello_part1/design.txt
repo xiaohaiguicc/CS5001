@@ -1,0 +1,16 @@
+class tile: single tile
+column, row, color, column_width
+display(): display a single tile
+
+class tiles: all tiles in the board
+tiles_list:[[]], a nested list
+column, number, white, black, count of white tiles, count of black tiles, a queue of colors(list)
+display(): display the whole board and tiles
+update(): carries out necessary actions if computer or player wins
+control(): handles mouse input for tiles
+
+class tiles_ai: complete an Othello-playing AI
+tiles
+computer_display(): computer player put tiles
+legal_move(): what is a legal move
+update():after adding one tile, how the other tiles change

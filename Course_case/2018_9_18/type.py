@@ -29,3 +29,4 @@ a = 'Hello'
 b = '1'.join(a) #join means put content in '' between each char of a 
 print (b)
 print(bool(-1))
+print(bool(0))

@@ -1,0 +1,12 @@
+For class tiles:
+test_constructor()
+1.valid inputs: tiles = tiles(4,4,50) 
+return values: tiles.TC = tiles.TR = 4
+tiles.CW = 50
+self.tiles_list[1][1].color = self.tiles_list[2][2].color = self.WHITE
+self.tiles_list[1][2].color = self.tiles_list[2][1].color = self.BLACK
+2.invalid inputs: tiles = tiles(4,3,50)
+return values: tiles.TC = 4， tiles.TR = 3
+tiles.CW = 50
+self.tiles_list[0][1].color = self.tiles_list[1][2].color = self.WHITE
+self.tiles_list[1][1].color = self.tiles_list[0][2].color = self.BLACK
